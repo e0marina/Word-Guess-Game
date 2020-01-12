@@ -1,5 +1,24 @@
 //create something to hold all of the words that could be guessed.
 
+//VARIABLES
+//===============================================================================
+
+//Create vars to hold *numbers* of wins, tries left
+var wins = 0;
+var triesLeft = 15;
+
+// Create vars that hold references to the HTML where we want to display numbers, text, or dashes
+var winsText = document.getElementById("wins");
+var currentWordText = document.getElementById("current-word");
+var wordDashesText = document.getElementById("word-dashes");
+var numTriesLeftText = document.getElementById("num-tries-left");
+var lettersAlreadyGuessedText = document.getElementById(
+  "letters-already-guessed"
+);
+
+// FUNCTIONS
+// ==============================================================================
+
 // make it so computer chooses a word at random, before the user chooses any letters
 
 //Press a key to get started - keyup, this key shouldn't log as a letter guessed.

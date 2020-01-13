@@ -4,7 +4,7 @@
 //or it is false and displays in the letters already guessed area, in uppercase.
 //the number of guesses count decreases by 1
 
-//if the user guesses the word they win, and win increases by 1
+//if the user guesses all the letters in the word... they win, and win increases by 1
 
 //if the user runs out of guesses:
 //new word is displayed
@@ -38,30 +38,56 @@ var lettersAlreadyGuessedText = document.getElementById(
 // FUNCTIONS
 // ==============================================================================
 
-//
+//Have the user try and guess the first word.
+//Loops through the letters in the array
+// for (let i = 0; i < kiwiArr.length; i++) {
+//   const element = kiwiArr[i];
+//   if (userGuess === kiwiArr[i]) {
+//     console.log("yay");
+
+//   }
+
+// }
 //When a user types a letter to guess a letter
 document.onkeyup = function(event) {
   //Determines which key was pressed.
   var userGuess = event.key;
   console.log(userGuess);
-
-  //Define a function that we can pass through multiple arrays
-  function arrayMatch(arr) {
-    //We then loop through the selected array
-    for (i = 0; i < arr.length; i++) {
-      console.log(arr[i]);
-      if (userGuess === arr[i]) {
-      }
+  //Loops through the letters in the array
+  for (let i = 0; i < kiwiArr.length; i++) {
+    const element = kiwiArr[i];
+    //if userGuess matches a letter in the array, console log yay
+    if (userGuess === kiwiArr[i]) {
+      console.log("yay");
     }
-    console.log("__________");
   }
-  //under current word the number of letters shown as dashes and dashes fill in with
-  //their respective letters as they are guessed by user
-
-  //FUNCTION CALLS
-  //===============================
-  arrayMatch(kiwiArr);
-  arrayMatch(appleArr);
-  arrayMatch(pearArr);
-  arrayMatch(bananaArr);
 };
+// CLUES
+//=================
+// push method w/Arrays adds an item to the end of an array
+// includes method determines if the string contains the characters or not
+// The forEach() method calls a function once for each element in an array, in order.
+// length...we've used this
+
+// OLD CODE
+//========================
+// //Define a function that we can pass through multiple arrays
+// function arrayMatch(arr) {
+//   //We then loop through the selected array
+//   for (i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+//     if (userGuess === arr[i]) {
+//       console.log("matched w word!");
+//     }
+//   }
+//   console.log("__________");
+// }
+// //under current word the number of letters shown as dashes and dashes fill in with
+// //their respective letters as they are guessed by user
+
+// //FUNCTION CALLS
+// //===============================
+// arrayMatch(kiwiArr);
+// arrayMatch(appleArr);
+// arrayMatch(pearArr);
+// arrayMatch(bananaArr);

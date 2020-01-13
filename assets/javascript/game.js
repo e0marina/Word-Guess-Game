@@ -1,11 +1,11 @@
 //create arrays to hold the letters inside the words that could be guessed.
 kiwiArr = ["k", "i", "w", "i"];
-//kiwiDashArr = ["_", "_", "_", "_"];
 appleArr = ["a", "p", "p", "l", "e"];
 pearArr = ["p", "e", "a", "r"];
 bananaArr = ["b", "a", "n", "a", "n", "a", "s"];
 
-coputerWordChoice = ["k", "a", "p", "b"];
+//not sure that computer needs to even make a choice
+//coputerWordChoice = ["kiwi", "apple", "pear", "banana"];
 
 //VARIABLES
 //===============================================================================
@@ -27,18 +27,15 @@ var lettersAlreadyGuessedText = document.getElementById(
 // ==============================================================================
 
 // Computer chooses a word at random, before the user chooses any letters
-var computerRandomChoice =
-  coputerWordChoice[Math.floor(Math.random() * coputerWordChoice.length)];
+// var computerRandomChoice =
+//   coputerWordChoice[Math.floor(Math.random() * coputerWordChoice.length)];
 
-// Computer matches computerRandomChoice with the spelled-out-letter fruit name
-if (
-  kiwiArr[0] ||
-  pearArr[0] ||
-  bananaArr[0] ||
-  appleArr[0] === computerRandomChoice
-) {
-  // display appropriate length of dashes in html
-}
+// // Computer matches computerRandomChoice with the spelled-out-letter fruit name's 1st letter
+
+// if (kiwiArr || pearArr || bananaArr || appleArr === computerRandomChoice) {
+//   console.log("true");
+//   console.log(computerRandomChoice);
+// }
 
 //Press a key to start the game
 

@@ -1,15 +1,12 @@
 //create arrays to hold the letters inside the words that could be guessed.
 kiwiArr = ["k", "i", "w", "i"];
-kiwiDashArr = ["_", "_", "_", "_"];
-//appleArr = ["a", "p", "p", "l", "e"];
-//pearArr = ["p", "e", "a", "r"];
+//kiwiDashArr = ["_", "_", "_", "_"];
+appleArr = ["a", "p", "p", "l", "e"];
+pearArr = ["p", "e", "a", "r"];
+bananaArr = ["b", "a", "n", "a", "n", "a", "s"];
 
-//IDEAS
-//============================
-//use empty array and push user guesses into it? then compare user guess array with computer choices?
-//create a func that can handle all of the arrays
-//use indexOf to find out index of an array and compare it to user's guess
-//does it make sense to use an object, for instance a dash and then replaced by the guessed letter
+coputerWordChoice = ["k", "a", "p", "b"];
+
 //VARIABLES
 //===============================================================================
 
@@ -29,9 +26,19 @@ var lettersAlreadyGuessedText = document.getElementById(
 // FUNCTIONS
 // ==============================================================================
 
-// make it so computer chooses a word from array at random, before the user chooses any letters
-//var computerGuess =
-//computerChoice[Math.floor(Math.random() * computerChoice.length)];
+// Computer chooses a word at random, before the user chooses any letters
+var computerRandomChoice =
+  coputerWordChoice[Math.floor(Math.random() * coputerWordChoice.length)];
+
+// Computer matches computerRandomChoice with the spelled-out-letter fruit name
+if (
+  kiwiArr[0] ||
+  pearArr[0] ||
+  bananaArr[0] ||
+  appleArr[0] === computerRandomChoice
+) {
+  // display appropriate length of dashes in html
+}
 
 //Press a key to start the game
 
@@ -53,3 +60,11 @@ var lettersAlreadyGuessedText = document.getElementById(
 //letters already guessed resets
 
 //display with textContent
+
+//IDEAS
+//============================
+//use empty array and push user guesses into it? then compare user guess array with computer choices?
+//create a func that can handle all of the arrays
+//use indexOf to find out index of an array and compare it to user's guess
+//does it make sense to use an object, for instance a dash and then replaced by the guessed letter
+//should be able to write something that uses length to "count" how many letters in a array and display that many dashes

@@ -1,3 +1,6 @@
+//NOTES
+//==================
+
 //whatever key pressed should convert to uppercase
 
 //either it is correct (true) and the letter is revealed in it's spot.
@@ -13,11 +16,8 @@
 
 //display with textContent
 
-//create arrays to hold the letters inside the words that could be guessed.
-kiwiArr = ["k", "i", "w", "i"];
-appleArr = ["a", "p", "p", "l", "e"];
-pearArr = ["p", "e", "a", "r"];
-bananaArr = ["b", "a", "n", "a", "n", "a", "s"];
+//create array with words to be guessed
+var fruits = ["kiwi", "apple", "pear", "peach", "banana"];
 
 //VARIABLES
 //===============================================================================
@@ -37,25 +37,25 @@ var lettersAlreadyGuessedText = document.getElementById(
 
 // FUNCTIONS
 // ==============================================================================
+//Random fruit chosen by the computer
 
+var word = fruits[Math.floor(Math.random() * fruits.length)];
+
+//Create array that has dashes for where each word's letter goes
+var dashesArr = [];
+for (let i = 0; i < word.length; i++) {
+  dashesArr[i] = "_";
+}
+
+// MAIN
+//======================================================================
 //When a user types a letter to guess a letter
 document.onkeyup = function(event) {
   //Determines which key was pressed.
   var userGuess = event.key;
   console.log(userGuess);
-  //Goes through the letters in the array
-  kiwiArr.forEach(index => {
-    if (
-      kiwiArr[0] === userGuess ||
-      kiwiArr[1] === userGuess ||
-      kiwiArr[2] === userGuess ||
-      kiwiArr[3] === userGuess
-    ) {
-      console.log("match");
-    }
-  });
 };
-// CLUES
+// CLUES VIA TA CHRIS
 //=================
 // push method w/Arrays adds an item to the end of an array
 // includes method determines if the string contains the characters or not

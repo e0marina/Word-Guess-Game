@@ -49,12 +49,25 @@ for (let i = 0; i < word.length; i++) {
 
 // MAIN
 //======================================================================
-//When a user types a letter to guess a letter
-document.onkeyup = function(event) {
-  //Determines which key was pressed.
-  var userGuess = event.key;
-  console.log(userGuess);
-};
+
+//Game
+var lettersLeft = word.length;
+while (lettersLeft > 0) {
+  //update page with progress
+  document.getElementById("current-word").innerHTML = dashesArr.join("");
+  //When a user types guess
+  document.onkeyup = function(event) {
+    //Determines which key was pressed.
+    var userGuess = event.key;
+    for (let j = 0; j < word.length; j++) {
+      if (word[j] === userGuess) {
+        dashesArr[j] = guess;
+        lettersLeft--;
+      }
+    }
+  };
+}
+
 // CLUES VIA TA CHRIS
 //=================
 // push method w/Arrays adds an item to the end of an array

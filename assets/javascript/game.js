@@ -38,29 +38,22 @@ var lettersAlreadyGuessedText = document.getElementById(
 // FUNCTIONS
 // ==============================================================================
 
-//Have the user try and guess the first word.
-//Loops through the letters in the array
-// for (let i = 0; i < kiwiArr.length; i++) {
-//   const element = kiwiArr[i];
-//   if (userGuess === kiwiArr[i]) {
-//     console.log("yay");
-
-//   }
-
-// }
 //When a user types a letter to guess a letter
 document.onkeyup = function(event) {
   //Determines which key was pressed.
   var userGuess = event.key;
   console.log(userGuess);
-  //Loops through the letters in the array
-  for (let i = 0; i < kiwiArr.length; i++) {
-    const element = kiwiArr[i];
-    //if userGuess matches a letter in the array, console log yay
-    if (userGuess === kiwiArr[i]) {
-      console.log("yay");
+  //Goes through the letters in the array
+  kiwiArr.forEach(index => {
+    if (
+      kiwiArr[0] === userGuess ||
+      kiwiArr[1] === userGuess ||
+      kiwiArr[2] === userGuess ||
+      kiwiArr[3] === userGuess
+    ) {
+      console.log("match");
     }
-  }
+  });
 };
 // CLUES
 //=================
@@ -68,26 +61,3 @@ document.onkeyup = function(event) {
 // includes method determines if the string contains the characters or not
 // The forEach() method calls a function once for each element in an array, in order.
 // length...we've used this
-
-// OLD CODE
-//========================
-// //Define a function that we can pass through multiple arrays
-// function arrayMatch(arr) {
-//   //We then loop through the selected array
-//   for (i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-//     if (userGuess === arr[i]) {
-//       console.log("matched w word!");
-//     }
-//   }
-//   console.log("__________");
-// }
-// //under current word the number of letters shown as dashes and dashes fill in with
-// //their respective letters as they are guessed by user
-
-// //FUNCTION CALLS
-// //===============================
-// arrayMatch(kiwiArr);
-// arrayMatch(appleArr);
-// arrayMatch(pearArr);
-// arrayMatch(bananaArr);

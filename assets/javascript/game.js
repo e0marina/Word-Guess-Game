@@ -16,6 +16,13 @@
 
 //display with textContent
 
+// **Check if a letter exists inside the array at all.
+// **If the letter exists somewhere in the word, then figure out exactly where (which indices).
+
+// // else
+// wrongGuesses.push(letter);
+// numGuesses--;
+
 //VARIABLES
 //===============================================================================
 //create array with words to be guessed
@@ -38,32 +45,31 @@ var lettersAlreadyGuessedText = document.getElementById(
 
 var word = fruits[Math.floor(Math.random() * fruits.length)];
 
-//Create array that has dashes for where each word's letter goes
-var dashesArr = [];
-for (i = 0; i < word.length; i++) {
-  dashesArr[i] = "_";
-  //show the dashes on the page
-  document.getElementById("current-word").innerHTML += dashesArr;
-}
-
-// MAIN
+//MAIN
 //======================================================================
 
 //Game
-var lettersLeft = word.length;
-while (lettersLeft > 0) {
+document.onkeyup = function(event) {
+  var userGuess = event.key;
+  var dashesArr = [];
+  for (i = 0; i < word.length; i++) {
+    dashesArr[i] = "_";
+    //show the dashes on the page
+    document.getElementById("current-word").innerHTML = dashesArr.join("");
+  }
+  var lettersLeft = word.length;
+  //while (lettersLeft > 0) {
+
   //update page with progress
-  document.getElementById("current-word").innerHTML += dashesArr.join("");
-  //When a user types guess
-  document.onkeyup = function(event) {
-    //Determines which key was pressed.
-    var userGuess = event.key;
-    //Update the game with the user's guess
-    for (j = 0; j < word.length; j++) {
-      if (word[j] === userGuess) {
-        dashesArr[j] = userGuess;
-        lettersLeft--;
-      }
+  // document.getElementById("current-word").innerHTML = dashesArr;
+
+  //Update the game with the user's guess
+  //for loop sometimes a solution to a issue that's not there
+  //write out on paper (like what happens on key up)
+  for (j = 0; j < word.length; j++) {
+    if (word[j] === userGuess) {
+      dashesArr[j] = userGuess;
+      lettersLeft--;
     }
-  };
-}
+  }
+};
